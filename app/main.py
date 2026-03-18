@@ -21,7 +21,7 @@ def root():
 
 @app.get("/tasks")
 def read_tasks(db: Session = Depends(get_db)):
-    return crud.get_tasks
+    return crud.get_tasks(db)
 
 models.Base.metadata.create_all(bind=engine)
 
